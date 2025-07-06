@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carbon Footprint Logger UI</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1> Carbon Footprint Logger UI 🌍</h1>
+
+      <form id="activity-form">
+        <select id="activity-select">
+          <option value="">-- Select an option --</option>
+          <option value="car_km">Car (Bus) Travel (1 km)</option>
+          <option value="meat_meal">Meat-based Meal</option>
+          <option value="electricity_kwh">Electricity (1 kWh)</option>
+        </select>
+        <input
+          type="number"
+          id="custom-amount"
+          placeholder="Quantity (optional)"
+          min="1"
+        />
+        <button type="submit">Add Activity</button>
+      </form>
+
+      <div class="filter">
+        <label for="category-filter">Filter by Category:</label>
+        <select id="category-filter">
+          <option value="all">All</option>
+          <option value="transport">Transport</option>
+          <option value="food">Food</option>
+          <option value="energy">Energy</option>
+        </select>
+      </div>
+
+      <h2>Total Emissions: <span id="total-emissions">0</span> kg CO₂ 🌍</h2>
+
+      <ul id="activity-list"></ul>
+
+      <canvas id="summary-chart" width="100" height="100"></canvas>
+
+      <button id="clear-data">Clear All Data</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
